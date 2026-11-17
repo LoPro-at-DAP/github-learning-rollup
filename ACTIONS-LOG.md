@@ -19,3 +19,4 @@ ones with the date you did them; row 1 of the audit report's coverage table poin
 | Date (UTC) | Repository | What I did | Why | Evidence | Result |
 |---|---|---|---|---|---|
 | YYYY-MM-DD | <repo> | <for example: created a ruleset on the default branch> | <reason> | <link> | <worked / refused as expected / gap> |
+| 2026-11-17 | github-learning-rollup | Tried a direct push to main | Test the ruleset | refused-push output | refused as expected |
