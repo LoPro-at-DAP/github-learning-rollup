@@ -1,0 +1,27 @@
+# PRACTICE RULE -- illustrative only, written for synthetic data with custom field names.
+# It is not a production rule and is not tied to any real system.
+title: Repeated failed security-key checks (practice)
+id: 1d2c963f-f14a-4184-b363-8d2564b00c32
+status: experimental
+description: >-
+  Illustrative practice rule. Matches each failed security-key check at sign-in.
+  One match is one failed check; the alert catalog (alert-catalog.md) sets how
+  many failures in what time window raise an alert. The field names (event_type,
+  result) are custom fields of the synthetic sample log.
+author: Bate (practice)
+date: 2026-11-02
+logsource:
+  product: practice_identity_provider
+  service: signin
+detection:
+  selection:
+    event_type: security_key_check
+    result: fail
+  condition: selection
+falsepositives:
+  - A person touching the wrong key, or using a new key that is not registered yet
+  - A browser or USB problem that makes the key time out
+level: high
+tags:
+  - attack.credential-access
+  - attack.t1110

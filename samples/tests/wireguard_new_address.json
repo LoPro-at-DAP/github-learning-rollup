@@ -1,0 +1,5 @@
+{
+  "about": "Synthetic sample: 8 events, 7 of them handshakes; 3 handshakes come from never-seen addresses.",
+  "events": "samples/wireguard_handshakes.jsonl",
+  "expect_matches": 3
+}

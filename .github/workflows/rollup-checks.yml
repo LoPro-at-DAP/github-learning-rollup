@@ -1,0 +1,54 @@
+# rollup-checks -- the two checks that gate every change to this public repository.
+#
+# When it runs: on every pull request into main, and on every push to main.
+#   validate-rules  checks the sample rules, runbooks and change records in samples/,
+#                   then scans the whole repository for anything that looks like a secret
+#   rule-tests      runs each sample rule against its sample events
+# The job names are the status-check names you select when you require checks in the ruleset.
+# Cost: standard GitHub-hosted runners are free for public repositories.
+
+name: rollup-checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-rules:
+    name: validate-rules
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: pip install pyyaml==6.0.2
+      - name: Validate the sample rules, runbooks and change records
+        run: python3 tools/validate_detection.py samples
+      - name: Scan the whole repository for secrets
+        run: python3 tools/validate_detection.py .
+
+  rule-tests:
+    name: rule-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: pip install pyyaml==6.0.2
+      - name: Run each sample rule against its sample events
+        run: python3 tools/run_rule_tests.py samples

@@ -1,0 +1,8 @@
+{"timestamp": "2026-10-28T08:02:11Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-alice-laptop", "peer_key_fp": "FAKE-KEYFP-ALICE-0001", "src_ip": "198.51.100.14", "src_port": 51820, "src_ip_seen_before": true}
+{"timestamp": "2026-10-28T08:15:40Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-bob-laptop", "peer_key_fp": "FAKE-KEYFP-BOB-0002", "src_ip": "198.51.100.88", "src_port": 40112, "src_ip_seen_before": true}
+{"timestamp": "2026-10-28T10:30:02Z", "event_type": "peer_added", "interface": "wg0", "peer": "peer-test-device", "peer_key_fp": "FAKE-KEYFP-TEST-0003", "changed_by": "admin-practice"}
+{"timestamp": "2026-10-28T12:01:57Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-alice-laptop", "peer_key_fp": "FAKE-KEYFP-ALICE-0001", "src_ip": "198.51.100.14", "src_port": 51820, "src_ip_seen_before": true}
+{"timestamp": "2026-10-28T13:44:09Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-test-device", "peer_key_fp": "FAKE-KEYFP-TEST-0003", "src_ip": "192.0.2.77", "src_port": 38001, "src_ip_seen_before": false}
+{"timestamp": "2026-10-28T16:20:33Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-bob-laptop", "peer_key_fp": "FAKE-KEYFP-BOB-0002", "src_ip": "198.51.100.88", "src_port": 40112, "src_ip_seen_before": true}
+{"timestamp": "2026-10-29T02:07:18Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-alice-laptop", "peer_key_fp": "FAKE-KEYFP-ALICE-0001", "src_ip": "203.0.113.45", "src_port": 60433, "src_ip_seen_before": false}
+{"timestamp": "2026-10-29T09:12:50Z", "event_type": "handshake", "interface": "wg0", "peer": "peer-bob-laptop", "peer_key_fp": "FAKE-KEYFP-BOB-0002", "src_ip": "203.0.113.160", "src_port": 41877, "src_ip_seen_before": false}

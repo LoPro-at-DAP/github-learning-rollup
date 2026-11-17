@@ -1,0 +1,5 @@
+{
+  "about": "Synthetic sample: 10 sign-in events; 6 are failed security-key checks for one user within 9 minutes.",
+  "events": "samples/securitykey_events.jsonl",
+  "expect_matches": 6
+}

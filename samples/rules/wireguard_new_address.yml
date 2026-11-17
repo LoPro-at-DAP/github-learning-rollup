@@ -1,0 +1,30 @@
+# PRACTICE RULE -- illustrative only, written for synthetic data with custom field names.
+# It is not a production rule and is not tied to any real system.
+title: WireGuard handshake from a never-seen source address (practice)
+id: 3c2cfafc-29fb-42ea-8f7a-aec8e945fbe3
+status: experimental
+description: >-
+  Illustrative practice rule. Matches a WireGuard tunnel handshake whose source
+  address has never been seen before for that peer key. A copied tunnel key used
+  from somewhere new looks like this. The field names (event_type,
+  src_ip_seen_before) are custom fields of the synthetic sample log, not a
+  standard log format.
+references:
+  - https://www.wireguard.com/protocol/
+author: Bate (practice)
+date: 2026-11-02
+logsource:
+  product: wireguard
+  service: handshakes
+detection:
+  selection:
+    event_type: handshake
+    src_ip_seen_before: false
+  condition: selection
+falsepositives:
+  - A person connecting from a new home network, hotel, or phone hotspot
+  - A home internet provider changing the person's address
+level: medium
+tags:
+  - attack.initial-access
+  - attack.t1078
