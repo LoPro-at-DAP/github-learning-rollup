@@ -24,7 +24,6 @@ detection:
 falsepositives:
   - A person connecting from a new home network, hotel, or phone hotspot
   - A home internet provider changing the person's address
-level: medium
 tags:
   - attack.initial-access
   - attack.t1078
